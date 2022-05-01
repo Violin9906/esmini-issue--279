@@ -12,7 +12,7 @@ using namespace std;
 int main() {
     std::ifstream t("../resources/xosc/cut-in.xosc");
     std::string str((std::istreambuf_iterator<char>(t)), std::istreambuf_iterator<char>());
-    SE_InitWithString(str.c_str(), 0, 1, 0, 0);
+    SE_InitWithString(str.c_str(), 0, 1, 0, 0); /* if disable display, it won't raise error */
     int time = 10;
     while (time--) {
         SE_StepDT(0.01f);
